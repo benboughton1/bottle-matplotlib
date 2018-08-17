@@ -38,7 +38,7 @@ __author__ = "Malte Marquarding"
 __version__ = '0.1.0'
 __license__ = 'MIT'
 
-import StringIO
+import BytesIO()
 
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
@@ -84,7 +84,7 @@ class MatplotlibPlugin(object):
             kwargs[keyword] = fig
             rv = callback(*args, **kwargs)
             canvas = FigureCanvas(fig)
-            output = StringIO.StringIO()
+            output = BytesIO()
             itype = 'png'
             if request.query.canvas_format \
                     and request.query.canvas_format in MIME_MAP.keys():
